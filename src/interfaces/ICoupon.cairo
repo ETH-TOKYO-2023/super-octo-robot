@@ -8,6 +8,6 @@ namespace ICoupon {
     func get_name() -> (name: felt) {
     }
 
-    func verify_requirements() -> () {
+    func verify_requirements() -> (res: felt) {
     }
 }

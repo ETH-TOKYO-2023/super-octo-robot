@@ -3,6 +3,6 @@ protostar-version = "0.9.2"
 lib-path = "lib"
 
 [contracts]
-main = ["src/main.cairo"]
+factory = ["src/factory.cairo"]
 ICoupon = ["src/interfaces/ICoupon.cairo"]
 
