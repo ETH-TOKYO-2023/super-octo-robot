@@ -47,11 +47,17 @@ func add_coupon{syscall_ptr: felt*, pedersen_ptr:HashBuiltin*, range_check_ptr}(
 }
 
 @external 
-func mint_coupon{syscall_ptr: felt*, pedersen_ptr:HashBuiltin*, range_check_ptr}(coupon_address: felt) {
+func mint_coupon{syscall_ptr: felt*, pedersen_ptr:HashBuiltin*, range_check_ptr}(coupon_address: felt, verify_requirements_len: felt, verify_requirements: felt*) {
+  alloc_locals;
+
   let (slot) = coupons.read(coupon_address);
   assert_nn(slot.low);
 
-  let (valid) = ICoupon.verify_requirements(contract_address=coupon_address);
+  let (valid) = ICoupon.verify_requirements(
+      contract_address=coupon_address,
+      args_len=verify_requirements_len, 
+      args=verify_requirements
+  );
   assert_nn(valid);
 
   let (value) = ICoupon.get_default_value(contract_address=coupon_address);
