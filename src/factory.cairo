@@ -37,8 +37,10 @@ func add_coupon{syscall_ptr: felt*, pedersen_ptr:HashBuiltin*, range_check_ptr}(
   alloc_locals;
 
   let (latest_slot) = last_slot.read();
-  local slot: Uint256;
-  slot.low = latest_slot;
+  local slot: Uint256 = Uint256(
+      low=latest_slot,
+      high=0
+  );
 
   coupons.write(coupon_address, slot);
   last_slot.write(latest_slot + 1);

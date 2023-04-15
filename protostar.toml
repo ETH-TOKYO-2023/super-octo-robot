@@ -11,4 +11,5 @@ cairo-path = [
 [contracts]
 factory = ["src/factory.cairo"]
 ICoupon = ["src/interfaces/ICoupon.cairo"]
+ape_coin = ["src/coupons/ape_coin.cairo"]
 
