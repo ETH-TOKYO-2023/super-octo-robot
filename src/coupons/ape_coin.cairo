@@ -9,7 +9,7 @@ from starkware.cairo.common.alloc import alloc
 const APE_ADDRESS = 1;
 const FACTS_REGISTRY_ADDRESS = 1;
 
-@external
+@view
 func get_default_value() -> (res: Uint256) {
     alloc_locals;
 
@@ -21,7 +21,7 @@ func get_default_value() -> (res: Uint256) {
     return (res=value);
 }
 
-@external
+@view
 func verify_requirements(args_len: felt, args: felt*) -> (res: felt) {
     alloc_locals;
 
