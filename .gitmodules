@@ -4,3 +4,6 @@
 [submodule "cairo_contracts"]
 	path = lib/cairo_contracts
 	url = https://github.com/CairOpen/cairo-contracts
+[submodule "cairo-open"]
+	path = lib/cairo-open
+	url = https://github.com/CairOpen/cairo-contracts
