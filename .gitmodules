@@ -3,4 +3,4 @@
 	url = https://github.com/carbonable-labs/cairo-erc-3525
 [submodule "cairo_contracts"]
 	path = lib/cairo_contracts
-	url = https://github.com/OpenZeppelin/cairo-contracts
+	url = https://github.com/CairOpen/cairo-contracts
